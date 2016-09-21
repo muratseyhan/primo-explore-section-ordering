@@ -30,7 +30,7 @@ For example, if you are developing a package for the 'Auto1' view, add the file 
       cd primo-explore-devenv/primo-explore/custom/Auto1
    ```
 - Type `npm install`.
-- A new folder named 'node_modules' should be created, which contains your dependended packages.
+- A new folder named 'node_modules' should be created, which contains the depended packages.
 - Restart your server.
 
 ### Running as the primary package.
