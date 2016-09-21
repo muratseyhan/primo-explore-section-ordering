@@ -1,7 +1,7 @@
 {
   "name": "primo-explore-section-ordering",
   "version": "0.0.1",
-  "description": "Pushes the 'Details' section to the bottom.",
+  "description": "If exists, pushes the 'details' section to the bottom of the full view.",
   "author": "muratseyhan",
   "email" : "muse@kb.dk",
   "repository": {
