@@ -1,15 +1,13 @@
-function PrmFullViewAfter(sectionOrdering) {
-  var ctrl = this;
-
-  ctrl.$onInit = function () {
-    sectionOrdering(ctrl.parentCtrl.services);
-  };
-
-}
-
-app.component('prmFullViewAfter', {
+angular.module('viewCustom').component('prmFullViewAfter', {
   bindings: {
     parentCtrl: '<',
   },
-  controller: ['sectionOrdering', PrmFullViewAfter],
+  controller: ['sectionOrdering', function(sectionOrdering) {
+    var ctrl = this;
+
+    ctrl.$onInit = function () {
+      sectionOrdering(ctrl.parentCtrl.services);
+    };
+
+  }]
 });

@@ -1,11 +1,11 @@
-app.factory('sectionOrdering', function() {
+angular.module('viewCustom').factory('sectionOrdering', function() {
   return function (sections) {
     if(!sections) return false;
     
     var numSections = sections.length;
     if(!(numSections > 0)) return false;
 
-    // Checking if there is a 'details' section.
+    // Check if there is a 'details' section.
     var filterResult = sections.filter(function(s) {return s.serviceName === 'details';} );
     if(filterResult.length !== 1 ) return false;
     var detailsSection = filterResult[0];
@@ -15,7 +15,7 @@ app.factory('sectionOrdering', function() {
     // Remove the 'details' section from the array.
     sections.splice(index,1);
 
-    // Appends the 'details' section to the array.
+    // Append the 'details' section to the array.
     sections.splice(numSections, 0, detailsSection);
     
     return true;
