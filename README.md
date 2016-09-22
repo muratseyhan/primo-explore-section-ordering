@@ -6,8 +6,8 @@ A simple Primo New UI customization package moving the 'details' section to the 
 ## Instructions
 
 ### Including as a dependency
-- This package assumes that an angular module named 'viewCustom' is defined in your application. If not, create a new JS file under the 'js/' directory.
-For example, if you are developing a package for the 'Auto1' view, you can create the file as 'primo-explore-devenv/primo-explore/custom/Auto1/js/module.js'.
+- This package assumes that an angular module named 'viewCustom' is defined in your application. If not, create a new JS file under the 'js/' directory named as 'custom.module.js'.
+For example, if you are developing a package for the 'Auto1' view, you can create the file as 'primo-explore-devenv/primo-explore/custom/Auto1/js/custom.module.js'.
 The file should contain the following line.
 
   ```
@@ -44,7 +44,7 @@ For example, if you are developing a package for the 'Auto1' view, add the file 
 
 If you would like to run this package as your primary customization package do the following.
 - Clone (or copy) this repository under 'primo-explore-devenv/primo-explore/custom/*YourViewCode*'.
-- Uncomment the method call in 'js/module.js'.
+- Uncomment the method call in 'js/custom.module.js'.
 
 ## Credits
 
