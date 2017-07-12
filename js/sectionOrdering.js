@@ -1,23 +1,26 @@
-angular.module('viewCustom').factory('sectionOrdering', function() {
-  return function (sections) {
-    if(!sections) return false;
-    
-    var numSections = sections.length;
-    if(!(numSections > 0)) return false;
+angular.module('viewCustom').service('sectionOrdering', function() {
 
-    // Check if there is a 'details' section.
-    var filterResult = sections.filter(function(s) {return s.serviceName === 'details';} );
-    if(filterResult.length !== 1 ) return false;
-    var detailsSection = filterResult[0];
+  this.orderSections = function(sections) {
+    if (!sections || !sections.length || !(sections.length > 0))
+      throw new Error('Section Ordering: Full view sections could not be found.');
 
-    var index = sections.indexOf(detailsSection);
-    
-    // Remove the 'details' section from the array.
-    sections.splice(index,1);
-
-    // Append the 'details' section to the array.
-    sections.splice(numSections, 0, detailsSection);
-    
-    return true;
+    // moveToBottomIfExists('links', sections);
+    moveToBottomIfExists('details', sections);
   };
+
+  function moveToBottomIfExists(sectionId, sections) {
+    let section = sections.find(function(s) {
+      return s.scrollId === sectionId;
+    });
+    if (section)
+      moveToBottom(section, sections);
+  }
+
+  function moveToBottom(section, sections) {
+    // Remove the section.
+    sections.splice(sections.indexOf(section), 1);
+    // Append the section to the end.
+    sections.splice(sections.length, 0, section);
+  }
+
 });

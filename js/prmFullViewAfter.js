@@ -5,8 +5,12 @@ angular.module('viewCustom').component('prmFullViewAfter', {
   controller: ['sectionOrdering', function(sectionOrdering) {
     var ctrl = this;
 
-    ctrl.$onInit = function () {
-      sectionOrdering(ctrl.parentCtrl.services);
+    ctrl.$onInit = function() {
+      try {
+        sectionOrdering.orderSections(ctrl.parentCtrl.services);
+      } catch (e) {
+        console.log(e.message);
+      };
     };
 
   }]
