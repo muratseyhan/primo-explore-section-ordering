@@ -1,5 +1,10 @@
 angular.module('viewCustom').service('sectionOrdering', function() {
 
+  /**
+   *  Reorder the sections in the full view.
+   *  @param {Array} sections - An array of section objects.  
+   *  @throws {Error} If the fullview sections cannot be found.  
+   */
   this.orderSections = function(sections) {
     if (!sections || !sections.length || !(sections.length > 0))
       throw new Error('Section Ordering: Full view sections could not be found.');
