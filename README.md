@@ -3,6 +3,8 @@
 
 A simple Primo New UI customization package moving the 'details' section to the bottom of the Primo full view.
 
+**If you are on August 2017 release or a more recent version of Primo, you should use the back office to order the sections.**
+
 ## Instructions
 
 ### Including as a dependency
